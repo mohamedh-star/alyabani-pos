@@ -1,0 +1,54 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "الياباني - إدارة المحل",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "dialog": { "save": true, "open": true },
+      "fs": {
+        "all": true,
+        "scope": ["**"]
+      },
+      "path": { "all": true },
+      "shell": { "open": true }
+    },
+    "bundle": {
+      "active": true,
+      "targets": ["msi", "nsis"],
+      "identifier": "com.alyabani.pos",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.ico"
+      ],
+      "windows": {
+        "wix": { "language": "ar-SA" },
+        "nsis": { "languages": ["Arabic"] }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "title": "الياباني لقطع غيار السيارات",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1000,
+        "minHeight": 650,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ]
+  }
+}

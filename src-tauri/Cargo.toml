@@ -1,0 +1,20 @@
+[package]
+name = "alyabani-pos"
+version = "1.0.0"
+description = "نظام إدارة محل الياباني لقطع غيار السيارات"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+tauri = { version = "1", features = ["dialog-save", "dialog-open", "fs-all", "path-all", "shell-open"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# "bundled" compiles SQLite from source as part of the build, so we don't
+# depend on any system-installed SQLite — this works the same way on
+# Windows, macOS, and Linux with zero extra setup.
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
